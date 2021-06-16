@@ -1,0 +1,30 @@
+exclude: >
+  (?x)^(
+      setup.py
+  )$
+repos:
+  - repo: https://github.com/asottile/seed-isort-config
+    rev: v1.9.2
+    hooks:
+      - id: seed-isort-config
+
+  - repo: https://github.com/pre-commit/mirrors-isort
+    rev: v4.3.20
+    hooks:
+      - id: isort
+
+  - repo: https://github.com/python/black
+    # 19.10b0 requires gcc which is not installed on CI
+    rev: 19.3b0
+    hooks:
+      - id: black
+
+  - repo: https://gitlab.com/pycqa/flake8
+    rev: 3.7.7
+    hooks:
+      - id: flake8
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.2.3
+    hooks:
+      - id: check-merge-conflict

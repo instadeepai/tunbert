@@ -1,0 +1,19 @@
+name: tunbert-torch
+channels:
+  - pytorch
+  - default
+dependencies:
+  - python=3.7.9
+  - black==19.10b0
+  - flake8=3.8.3
+  - isort=4.3.21
+  - pytorch=1.6.0
+  - numpy=1.19.1
+  - pip=20.2.2
+  - torchvision=0.7.0
+  - cudatoolkit=10.1
+  - pip:
+      - nemo_toolkit[all]==1.0.0b1
+      - pytorch_lightning==0.9.0
+      - pre-commit==2.7.1
+      - omegaconf==2.0.1rc12
