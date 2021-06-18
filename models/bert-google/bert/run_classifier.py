@@ -24,8 +24,6 @@ import modeling as modeling
 import optimization as optimization
 import tensorflow.compat.v1 as tf
 import tokenization as tokenization
-from farasa.segmenter import FarasaSegmenter
-from preprocess_arabert import preprocess
 
 flags = tf.flags
 
@@ -150,10 +148,6 @@ flags.DEFINE_integer(
     "Only used if `use_tpu` is True. Total number of TPU cores to use.",
 )
 
-flags.DEFINE_bool(
-    "preprocess_farasa", False, "Whether to preprocess input text using farasa or not"
-)
-
 
 class InputExample(object):
     """A single training/test example for simple sequence classification."""
@@ -235,10 +229,6 @@ class DataProcessor(object):
 class Sst2Processor(DataProcessor):
     """Processor for the SST-2 data set (GLUE version)."""
 
-    def __init__(self, farasa_preprocessing=False, farasa=None):
-        self.farasa_preprocessing = farasa_preprocessing
-        self.farasa = farasa
-
     def get_train_examples(self, data_dir):
         """See base class."""
         return self._create_examples(
@@ -269,13 +259,6 @@ class Sst2Processor(DataProcessor):
                 continue
             guid = "%s-%s" % (set_type, i)
             text_a = tokenization.convert_to_unicode(line[0])
-            if self.farasa_preprocessing and self.farasa is not None:
-                text_a = preprocess(
-                    text_a,
-                    do_farasa_tokenization=True,
-                    farasa=self.farasa,
-                    use_farasapy=True,
-                )
             if set_type == "test":
                 label = "0"
             else:
@@ -769,11 +752,7 @@ def main(_):
     if task_name not in processors:
         raise ValueError("Task not found: %s" % (task_name))
 
-    if FLAGS.preprocess_farasa:
-        farasa = FarasaSegmenter(interactive=True)
-        processor = processors[task_name](farasa_preprocessing=True, farasa=farasa)
-    else:
-        processor = processors[task_name]()
+    processor = processors[task_name]()
 
     label_list = processor.get_labels()
 
