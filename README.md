@@ -18,9 +18,9 @@ We also released the two pre-trained new models: TunBERT Pytorch and TunBERT Ten
 Finally, we open source the fine-tuning datasets used for Tunisian Dialect Identification (TDI)  and  Reading Comprehension Question-Answering (RCQA)
 
 # About the Pre-trained models
-TunBERT Pytorch model is based on BERT’s Pytorch implementation from NVIDIA NeMo. The model was pre-trained using 4 NVIDIA Tesla V100 GPUs on a dataset of 500k Tunisian social media comments written in Arabic letters. The pretrained model consists of 12 layers of self-attention modules. Each module is made with 12 heads of self-attention with 768 hidden-size.  Furthermore, an Adam optimizer was used, with a learning rate of 1e-4, a batch size of 128, a maximum sequence length of 128 and a masking probability of 15%. Cosine annealing was used for a learning rate scheduling with a warm-up ratio of 0.01.
+TunBERT Pytorch model is based on BERT’s Pytorch implementation from [NVIDIA NeMo](https://github.com/NVIDIA/NeMo). The model was pre-trained using 4 NVIDIA Tesla V100 GPUs on a dataset of 500k Tunisian social media comments written in Arabic letters. The pretrained model consists of 12 layers of self-attention modules. Each module is made with 12 heads of self-attention with 768 hidden-size.  Furthermore, an Adam optimizer was used, with a learning rate of 1e-4, a batch size of 128, a maximum sequence length of 128 and a masking probability of 15%. Cosine annealing was used for a learning rate scheduling with a warm-up ratio of 0.01.
 
-Similarly, a second TunBERT TensorFlow model was trained using TensorFlow implementation. We use the same compute power for pre-training this model (4 NVIDIA Tesla V100 GPUs) while keeping the same hyper-parameters: A learning rate of 1e-4, a batch size of 128, a maximum sequence length of 128.
+Similarly, a second TunBERT TensorFlow model was trained using TensorFlow implementation from [Google](https://github.com/google-research/bert). We use the same compute power for pre-training this model (4 NVIDIA Tesla V100 GPUs) while keeping the same hyper-parameters: A learning rate of 1e-4, a batch size of 128 and a maximum sequence length of 128.
 
 The two models are available for download through:
 
@@ -57,8 +57,9 @@ Reference: Karim Sayadi, Marcus Liwicki, Rolf Ingold, Marc Bui. Tunisian Dialect
 
 
 ## Tunisian Dialect Identification
-Arabic dialects (TADI): It is a binary classification task consisting of classifying Tunisian dialect and Non Tunisian dialect from an Arabic dialectical dataset.
-Identification of Tunisian dialect and Algerian dialect (TAD): It is a binary classification task consisting of classifying Tunisian dialect and Algerian dialect from an Arabic dialectical dataset.
+Tunisian Arabic Dialects Identification(TADI): It is a binary classification task consisting of classifying Tunisian dialect and Non Tunisian dialect from an Arabic dialectical dataset.
+
+Tunisian Algerian Dialect(TAD): It is a binary classification task consisting of classifying Tunisian dialect and Algerian dialect from an Arabic dialectical dataset.
 
 The two datasets are available for download for research purposes:
 
@@ -92,7 +93,7 @@ We use:
 
 ```shell script
 # Clone the repo
-git clone git@gitlab.com:tunbert/tunbert.git
+git clone https://github.com/instadeepai/tunbert.git
 cd tunbert
 
 # Create a conda env
@@ -139,21 +140,21 @@ models/               # contains the different models to used
 To fine-tune TunBERT-PyTorch on the SA task, you need to:
 * Run the following command-line:
 ```
-python models/bert-nvidia/bert_finetuning_SA_DC.py --config-name "sentiment_analysis_config"
+python models/bert-nvidia/bert_finetuning_SA_DC.py --config-name "sentiment_analysis_config" model.language_model.lm_checkpoint="/path/to/checkpoints/PretrainingBERTFromText--end.ckpt" model.train_ds.file_path="/path/to/train.tsv" model.validation_ds.file_path="/path/to/valid.tsv" model.test_ds.file_path="/path/to/test.tsv"
 ```
 
 ## Fine-tune TunBERT-PyTorch on the Dialect Classification (DC) task
 To fine-tune TunBERT-PyTorch on the DC task, you need to:
 * Run the following command-line:
 ```
-python models/bert-nvidia/bert_finetuning_SA_DC.py --config-name "dialect_classification_config"
+python models/bert-nvidia/bert_finetuning_SA_DC.py --config-name "dialect_classification_config" model.language_model.lm_checkpoint="/path/to/checkpoints/PretrainingBERTFromText--end.ckpt" model.train_ds.file_path="/path/to/train.tsv" model.validation_ds.file_path="/path/to/valid.tsv" model.test_ds.file_path="/path/to/test.tsv"
 ```
 
 ## Fine-tune TunBERT-PyTorch on the Question Answering (QA) task
 To fine-tune TunBERT-PyTorch on the QA task, you need to:
 * Run the following command-line:
 ```
-python models/bert-nvidia/bert_finetuning_QA.py --config-name "question_answering_config"
+python models/bert-nvidia/bert_finetuning_QA.py --config-name "question_answering_config" model.language_model.lm_checkpoint="/path/to/checkpoints/PretrainingBERTFromText--end.ckpt" model.train_ds.file="/path/to/train.json" model.validation_ds.file="/path/to/val.json" model.test_ds.file="/path/to/test.json"
 ```
 
 # TunBERT-TensorFlow
