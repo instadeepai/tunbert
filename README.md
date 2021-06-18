@@ -34,7 +34,7 @@ For TunBERT TensorFlow:
 
 * [vocab.txt](https://storage.googleapis.com/tunbert-opensource-datasets/TensorFlow_model/vocab.txt)
 
-* [TunBERT.ckpt.data-00000-of-00001.index](https://storage.googleapis.com/tunbert-opensource-datasets/TensorFlow_model/bert_model_step_616000.ckpt-154.index)
+* [TunBERT.ckpt.data-00000-of-00001.index](https://storage.googleapis.com/tunbert-opensource-datasets/TensorFlow_model/bert_model_step_616000.ckpt-154.data-00000-of-00001.index)
 
 * [TunBERT.ckpt.data-00000-of-00001](https://storage.googleapis.com/tunbert-opensource-datasets/TensorFlow_model/bert_model_step_616000.ckpt-154.data-00000-of-00001)
 
