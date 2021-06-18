@@ -34,11 +34,9 @@ For TunBERT TensorFlow:
 
 * [vocab.txt](https://storage.googleapis.com/tunbert-opensource-datasets/TensorFlow_model/vocab.txt)
 
-* [TunBERT.ckpt.index](https://storage.googleapis.com/tunbert-opensource-datasets/TensorFlow_model/bert_model_step_616000.ckpt-154.index)
+* [TunBERT.ckpt.data-00000-of-00001.index](https://storage.googleapis.com/tunbert-opensource-datasets/TensorFlow_model/bert_model_step_616000.ckpt-154.index)
 
 * [TunBERT.ckpt.data-00000-of-00001](https://storage.googleapis.com/tunbert-opensource-datasets/TensorFlow_model/bert_model_step_616000.ckpt-154.data-00000-of-00001)
-
-* [checkpoint](https://storage.googleapis.com/tunbert-opensource-datasets/TensorFlow_model/checkpoint)
 
 
 # About the Finetuning datasets
@@ -165,8 +163,6 @@ To fine-tune TunBERT-TensorFlow for a SA task or, you need to:
 
 	**BERT_FOLDER_NAME** should contain the config and vocab files and the checkpoint of your language model 
 * Specify the **DATA_FOLDER_NAME** in ```models/bert-google/finetuning_sa_tdid.sh```
-* if you want to preprocess your data using **Farasa**, you need to set `Farasa` to
-	 **True** in `models/bert-google/finetuning_sa_tdid.sh`
 * Run:
 ```
 bash models/bert-google/finetuning_sa_tdid.sh
@@ -181,7 +177,9 @@ To fine-tune TunBERT-TensorFlow for a QA task, you need to:
 ```
 bash models/bert-google/finetuning_squad.sh
 ```
+You can view the results, by launching tensorboard from your logging directory.
 
+e.g. `tensorboard --logdir=OUTPUT_<task>_FOLDER_NAME`
 # Contact information
 InstaDeep
 
