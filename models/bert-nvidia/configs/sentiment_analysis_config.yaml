@@ -68,7 +68,7 @@ model:
     pin_memory: ${model.dataset.pin_memory}
 
   test_ds:
-    file_path: dev-data/sentiment_analysis_tsac/dev.tsv
+    file_path: dev-data/sentiment_analysis_tsac/test.tsv
     batch_size: 4
     shuffle: false
     num_samples: -1 # number of samples to be considered, -1 means all the dataset
