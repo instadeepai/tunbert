@@ -7,7 +7,7 @@
 
 People in Tunisia use the Tunisian dialect in their daily communications, in most of their media (TV, radio, songs, etc), and on the internet (social media, forums). Yet, this dialect is not standardized which means there is no unique way for writing and speaking it. Added to that, it has its proper lexicon, phonetics, and morphological structures. The need for a robust language model for the Tunisian dialect has become crucial in order to develop NLP-based applications (translation, information retrieval, sentiment analysis, etc).
 
-BERT (Bidirectional Encoder Representations from Transformers) is a method to pre-train general purpose natural language models in an unsupervised fashion and then fine-tune them on specific downstream tasks with labelled datasets. This method was first implemented by Google and gives state-of-the-art results on many tasks as it's the first deeply bidirectional NLP pre-training system. 
+BERT (Bidirectional Encoder Representations from Transformers) is a method to pre-train general purpose natural language models in an unsupervised fashion and then fine-tune them on specific downstream tasks with labelled datasets. This method was first implemented by Google and gives state-of-the-art results on many tasks as it's the first deeply bidirectional NLP pre-training system.
 
 TunBERT is the first release of a pre-trained BERT model for the Tunisian dialect using a Tunisian Common-Crawl-based dataset. TunBERT was applied to three NLP downstream tasks: Sentiment Analysis (SA), Tunisian Dialect Identification (TDI) and  Reading Comprehension Question-Answering (RCQA).
 
@@ -26,17 +26,17 @@ The two models are available for download through:
 
 For TunBERT PyTorch:
 
-* [PretrainingBERTFromText--end.ckpt](https://storage.googleapis.com/tunbert-opensource-datasets/PyTorch_model/PretrainingBERTFromText--end.ckpt)
+* [PretrainingBERTFromText--end.ckpt](https://storage.googleapis.com/ext-oss-tunbert-gcp/PyTorch_model/PretrainingBERTFromText--end.ckpt)
 
 For TunBERT TensorFlow:
 
-* [TunBERT_config.json](https://storage.googleapis.com/tunbert-opensource-datasets/TensorFlow_model/bert_config.json)
+* [TunBERT_config.json](https://storage.googleapis.com/ext-oss-tunbert-gcp/TensorFlow_model/bert_config.json)
 
-* [vocab.txt](https://storage.googleapis.com/tunbert-opensource-datasets/TensorFlow_model/vocab.txt)
+* [vocab.txt](https://storage.googleapis.com/ext-oss-tunbert-gcp/TensorFlow_model/vocab.txt)
 
-* [TunBERT.ckpt.data-00000-of-00001.index](https://storage.googleapis.com/tunbert-opensource-datasets/TensorFlow_model/bert_model_step_616000.ckpt-154.data-00000-of-00001.index)
+* [TunBERT.ckpt.data-00000-of-00001.index](https://storage.googleapis.com/ext-oss-tunbert-gcp/TensorFlow_model/bert_model_step_616000.ckpt-154.data-00000-of-00001.index)
 
-* [TunBERT.ckpt.data-00000-of-00001](https://storage.googleapis.com/tunbert-opensource-datasets/TensorFlow_model/bert_model_step_616000.ckpt-154.data-00000-of-00001)
+* [TunBERT.ckpt.data-00000-of-00001](https://storage.googleapis.com/ext-oss-tunbert-gcp/TensorFlow_model/bert_model_step_616000.ckpt-154.data-00000-of-00001)
 
 
 # About the Finetuning datasets
@@ -62,14 +62,14 @@ Tunisian Algerian Dialect(TAD): It is a binary classification task consisting of
 The two datasets are available for download for research purposes:
 
 TADI:
-* [Train-set](https://storage.googleapis.com/tunbert-opensource-datasets/TADI_dataset/TADI_train.tsv)
-* [Valid-set](https://storage.googleapis.com/tunbert-opensource-datasets/TADI_dataset/TADI_valid.tsv)
-* [Test-set](https://storage.googleapis.com/tunbert-opensource-datasets/TADI_dataset/TADI_test.tsv)
+* [Train-set](https://storage.googleapis.com/ext-oss-tunbert-gcp/TADI_dataset/TADI_train.tsv)
+* [Valid-set](https://storage.googleapis.com/ext-oss-tunbert-gcp/TADI_dataset/TADI_valid.tsv)
+* [Test-set](https://storage.googleapis.com/ext-oss-tunbert-gcp/TADI_dataset/TADI_test.tsv)
 
 TAD:
-* [Train-set](https://storage.googleapis.com/tunbert-opensource-datasets/TAD_dataset/TAD_train.tsv)
-* [Valid-set](https://storage.googleapis.com/tunbert-opensource-datasets/TAD_dataset/TAD_valid.tsv)
-* [Test-set](https://storage.googleapis.com/tunbert-opensource-datasets/TAD_dataset/TAD_test.tsv)
+* [Train-set](https://storage.googleapis.com/ext-oss-tunbert-gcp/TAD_dataset/TAD_train.tsv)
+* [Valid-set](https://storage.googleapis.com/ext-oss-tunbert-gcp/TAD_dataset/TAD_valid.tsv)
+* [Test-set](https://storage.googleapis.com/ext-oss-tunbert-gcp/TAD_dataset/TAD_test.tsv)
 
 ## Reading Comprehension Question-Answering
 For this task, we built TRCD (Tunisian Reading Comprehension Dataset) as a Question-Answering dataset for Tunisian dialect. We used a dialectal version of the Tunisian constitution following the guideline in [this article](https://arxiv.org/abs/1704.00051). It is composed of 144 documents where each document has exactly 3 paragraphs and three Question-Answer pairs are assigned to each paragraph. Questions were formulated by four Tunisian native speaker annotators and each question should be paired with a paragraph.
@@ -77,9 +77,9 @@ For this task, we built TRCD (Tunisian Reading Comprehension Dataset) as a Quest
 We made the dataset publicly available for research purposes:
 
 TRCD:
-* [Train-Set](https://storage.googleapis.com/tunbert-opensource-datasets/TRCD_dataset/TRCD_train.json)
-* [Valid-Set](https://storage.googleapis.com/tunbert-opensource-datasets/TRCD_dataset/TRCD_valid.json)
-* [Test-Set](https://storage.googleapis.com/tunbert-opensource-datasets/TRCD_dataset/TRCD_test.json)
+* [Train-Set](https://storage.googleapis.com/ext-oss-tunbert-gcp/TRCD_dataset/TRCD_train.json)
+* [Valid-Set](https://storage.googleapis.com/ext-oss-tunbert-gcp/TRCD_dataset/TRCD_valid.json)
+* [Test-Set](https://storage.googleapis.com/ext-oss-tunbert-gcp/TRCD_dataset/TRCD_test.json)
 
 
 # Install
@@ -115,9 +115,9 @@ This is the folder structure of the project:
 ```
 README.md             # This file :)
 .gitlab-ci.yml        # CI with gitlab
-.gitlab/              # Gitlab specific 
+.gitlab/              # Gitlab specific
 .pre-commit-config.yml  # The checks to run before every commit
-environment_torch.yml       # contains the conda environment definition 
+environment_torch.yml       # contains the conda environment definition
 environment_tf2.yml       # contains the conda environment definition for pre-training bert-google
 ...
 
@@ -126,7 +126,7 @@ dev-data/             # data sample
     dialect_classification_tadi/
     question_answering_trcd/
 
-models/               # contains the different models to used 
+models/               # contains the different models to used
     bert-google/
     bert-nvidia/
 
@@ -159,9 +159,9 @@ python models/bert-nvidia/bert_finetuning_QA.py --config-name "question_answerin
 
 ## Fine-tune TunBERT-TensorFlow on the Sentiment Analysis (SA) or Dialect Classification (DC) Task:
 To fine-tune TunBERT-TensorFlow for a SA task or, you need to:
-* Specify the **BERT_FOLDER_NAME** in ```models/bert-google/finetuning_sa_tdid.sh```. 
+* Specify the **BERT_FOLDER_NAME** in ```models/bert-google/finetuning_sa_tdid.sh```.
 
-	**BERT_FOLDER_NAME** should contain the config and vocab files and the checkpoint of your language model 
+	**BERT_FOLDER_NAME** should contain the config and vocab files and the checkpoint of your language model
 * Specify the **DATA_FOLDER_NAME** in ```models/bert-google/finetuning_sa_tdid.sh```
 * Run:
 ```
@@ -169,9 +169,9 @@ bash models/bert-google/finetuning_sa_tdid.sh
 ```
 ## Fine-tune TunBERT-TensorFlow on the Question Answering (QA) Task:
 To fine-tune TunBERT-TensorFlow for a QA task, you need to:
-* Specify the **BERT_FOLDER_NAME** in ```models/bert-google/finetuning_squad.sh```. 
+* Specify the **BERT_FOLDER_NAME** in ```models/bert-google/finetuning_squad.sh```.
 
-    **BERT_FOLDER_NAME** should contain the config and vocab files and the checkpoint of your language model 
+    **BERT_FOLDER_NAME** should contain the config and vocab files and the checkpoint of your language model
 * Specify the **DATA_FOLDER_NAME** in ```models/bert-google/finetuning_squad.sh```
 * Run:
 ```
